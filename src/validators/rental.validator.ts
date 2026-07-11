@@ -1,4 +1,4 @@
-import { body, param } from 'express-validator';
+import { body, param, query } from 'express-validator';
 
 export const rentalValidators = {
   create: [
@@ -96,25 +96,25 @@ export const rentalValidators = {
   ],
 
   checkAvailability: [
-    body('gearId')
+    query('gearId')
       .notEmpty()
       .withMessage('Gear ID is required')
       .isString()
       .withMessage('Invalid gear ID format'),
-    
-    body('startDate')
+
+    query('startDate')
       .notEmpty()
       .withMessage('Start date is required')
       .isISO8601()
       .withMessage('Invalid start date format'),
-    
-    body('endDate')
+
+    query('endDate')
       .notEmpty()
       .withMessage('End date is required')
       .isISO8601()
       .withMessage('Invalid end date format')
       .custom((value, { req }) => {
-        const start = new Date(req.body.startDate);
+        const start = new Date(req.query!.startDate as string);
         const end = new Date(value);
         if (end <= start) {
           throw new Error('End date must be after start date');
