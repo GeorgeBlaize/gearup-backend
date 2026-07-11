@@ -38,9 +38,12 @@ The seed script also creates a sample provider (`provider@gearup.com` / `provide
 
 ## API Documentation
 
+Published docs: https://gearup-api.docs.buildwithfern.com
+
 A Postman collection covering every endpoint lives in [postman/](./postman/):
 - `GearUp.postman_collection.json` — import into Postman
 - `GearUp.postman_environment.json` — local environment (`baseUrl=http://localhost:5000`)
+- `GearUp.postman_environment.production.json` — production environment (`baseUrl=https://gearup-backend-flax.vercel.app`)
 
 Logging in via the collection's Auth folder automatically populates `{{adminToken}}`, `{{providerToken}}`, and `{{customerToken}}` collection variables for use in subsequent requests.
 
@@ -64,7 +67,7 @@ Payment integration is via **Stripe** (`/api/payments/create`, `/api/payments/co
 
 | Item | Link |
 |------|------|
-| Backend Repo | _fill in after pushing to GitHub_ |
-| Live API | _fill in after deploying (Vercel/Render)_ |
-| API Docs | _fill in after publishing the Postman collection (documenter.getpostman.com)_ |
+| Backend Repo | https://github.com/GeorgeBlaize/gearup-backend |
+| Live API | https://gearup-backend-flax.vercel.app |
+| API Docs | https://gearup-api.docs.buildwithfern.com |
 | Demo Video | _fill in after recording_ |
